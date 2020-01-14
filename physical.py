@@ -7,11 +7,14 @@ class Physical(pygame.sprite.Sprite):
 
     def __init__(self, x=0, y=0):
         pygame.sprite.Sprite.__init__(self)
+        self.pos_x = x
+        self.pos_y = y
         self.image = pygame.image.load("data/sci_ship_one.png").convert()
         self.image.convert_alpha()
         self.image.set_colorkey(self.ALPHA)
         self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
+        #self.rect.center = (x, y)
+        self.rect.center = (self.pos_x, self.pos_y)
         self.speed = 2
 
     def load_image(self, filename):
@@ -19,6 +22,7 @@ class Physical(pygame.sprite.Sprite):
         self.image.convert_alpha()
         self.image.set_colorkey(self.ALPHA)
         self.rect = self.image.get_rect()
+        self.rect.center = (self.pos_x, self.pos_y)
         pass
 
     def control(self):

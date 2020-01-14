@@ -26,9 +26,8 @@ pygame.display.set_caption("Szczecińskie Collegium Informatyczne SCI 2020")
 # synchronizacja FPS
 clock = pygame.time.Clock()
 
-ship = physical.Physical()
+ship = physical.Physical(400, 300)
 ship.load_image("data/sci_ship_two.png")
-ship.rect.center = (300, 100)
 
 # rejestrujemy obiekty w kontenerze
 all_sprites = pygame.sprite.Group()
